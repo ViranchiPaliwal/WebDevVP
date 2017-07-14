@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //
 require('./test/app');
 //
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 7000);
 // console.log("hello world");
 // var express = require('express');
 // var app = express();
