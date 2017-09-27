@@ -1,4 +1,5 @@
 var app = require('../express');
+var q = require('q');
 
 app.get("/api/test", findAllMessages);
 app.post("/api/test", createMessage);
@@ -9,19 +10,14 @@ if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
     var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
     var password = process.env.MLAB_PASSWORD_WEBDEV;
     connectionString = 'mongodb://' + username + ':' + password;
-    connectionString += '@ds129459.mlab.com:29459/heroku_ztsnltgh'; // user yours
+    connectionString += '@ds145312.mlab.com:45312/heroku_hk8k7m0j'; // user yours
 }
-
-if(process.env.MLAB_USERNAME) {
-    connectionString = process.env.MLAB_USERNAME + ":" +
-        process.env.MLAB_PASSWORD + "@" +
-        process.env.MLAB_HOST + ':' +
-        process.env.MLAB_PORT + '/' +
-        process.env.MLAB_APP_NAME;
-}
+// Replace "@ds157268.mlab.com:57268/heroku_nh37fqq4"
+// above with your own URL given to you by mLab
 
 var mongoose = require("mongoose");
 mongoose.connect(connectionString);
+mongoose.Promise = q.Promise;
 
 var TestSchema = mongoose.Schema({
     message: String
