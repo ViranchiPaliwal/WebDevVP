@@ -10,7 +10,7 @@ if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
     var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
     var password = process.env.MLAB_PASSWORD_WEBDEV;
     connectionString = 'mongodb://' + username + ':' + password;
-    connectionString += '@ds145312.mlab.com:45312/heroku_hk8k7m0j'; // user yours
+    connectionString += '@ds129459.mlab.com:29459/heroku_ztsnltgh'; // user yours
 }
 // Replace "@ds157268.mlab.com:57268/heroku_nh37fqq4"
 // above with your own URL given to you by mLab
