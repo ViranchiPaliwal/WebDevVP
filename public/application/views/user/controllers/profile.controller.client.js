@@ -43,7 +43,7 @@
         function updateUser(user) {
             //alert("inside update of controller");
             userService.updateUserByUserId(user, uId);
-            //alert("Hi " + user.username + " all values have been updated successfully!");
+            alert("Hi " + user.username + " all values have been updated successfully!");
 
         }
 

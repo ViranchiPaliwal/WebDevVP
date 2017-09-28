@@ -37,7 +37,7 @@
                                 }
                                 else */
                                 {
-                                    alert("Welcome " + user.username + " !!!")
+                                    //alert("Welcome " + user.username + " !!!")
                                     var newUser = {
                                         username:user.username,
                                         password:user.password1
@@ -45,7 +45,7 @@
                                     userService.createUser(newUser)
                                         .then( function (response) {
                                             newUser = response.data
-                                            alert("Hey, " + user.username + " your userId is " + newUser._id);
+                                            //alert("Hey, " + user.username + " your userId is " + newUser._id);
                                             $location.url("/profile/" + newUser._id);
                                         });
                                 }
