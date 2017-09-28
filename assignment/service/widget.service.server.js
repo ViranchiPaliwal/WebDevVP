@@ -1,5 +1,5 @@
 /**
- * Created by prasadtajane on 7/27/17.
+ * Created by viranchi on 7/27/17.
  */
 
 var app = require("../../express");
@@ -8,9 +8,9 @@ var widgetModel = require("../model/widget/widget.model.server");
 //var widgets = [];
 
 var multer = require('multer'); // npm install multer --save
-var upload = multer({ dest: __dirname+'/../../public/assignment/uploads' });
+var upload = multer({ dest: __dirname+'/../../public/application/uploads' });
 
-app.post ("/api/assignment/uploads", upload.single('myFile'), uploadImage);
+app.post ("/api/application/uploads", upload.single('myFile'), uploadImage);
 
 
 app.get("/api/profile/:userId/website/:websiteId/page/:pageId/widget",getwidgets);
@@ -65,7 +65,7 @@ function uploadImage(req, res) {
         .then(function (widget) {
             console.log("widget service - function call");
             console.log(widget);
-            widget.url = '/assignment/uploads/'+myFile.filename ;
+            widget.url = '/application/uploads/'+myFile.filename ;
             widget.myFile = myFile;
             widget.name = name;
             widget.width = width;
@@ -80,7 +80,7 @@ function uploadImage(req, res) {
         });*/
 
     console.log(widget);
-    widget.url = '/assignment/uploads/'+myFile.filename ;
+    widget.url = '/application/uploads/'+myFile.filename ;
     widget.myFile = myFile;
     widget.name = name;
     widget.width = width;
@@ -99,7 +99,7 @@ function uploadImage(req, res) {
 
     //  /api/profile/:userId/website/:websiteId/page/:pageId/widget
     //  http://localhost:3000/assignment/index.html#!/profile/456/website/456/page/321/widget
-    var callbackUrl   = "/assignment/index.html#!/profile/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+widgetId;
+    var callbackUrl   = "/application/index.html#!/profile/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+widgetId;
 
     res.redirect(callbackUrl);
 }
